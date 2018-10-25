@@ -75,3 +75,38 @@ basicStats(results)[c("Mean", "Stdev"),]
 res.aov <- aov(results ~ drug, data = df)
 # Summary of the analysis
 summary(res.aov)
+
+# Simulating Random Multivariate Correlated Data (Continuous Variables)
+# Code from https://www.r-bloggers.com/simulating-random-multivariate-correlated-data-continuous-variables/
+R = matrix(cbind(1,.80,.2,  .80,1,.7,  .2,.7,1),nrow=3)
+U = t(chol(R))
+nvars = dim(U)[1]
+numobs = 100000
+set.seed(1)
+random.normal = matrix(rnorm(nvars*numobs,10,1), nrow=nvars, ncol=numobs);
+X = U %*% random.normal
+newX = t(X)
+raw = as.data.frame(newX)
+orig.raw = as.data.frame(t(random.normal))
+names(raw) = c("response","predictor1","predictor2")
+cor(raw)
+plot(head(raw, 100))
+plot(head(orig.raw,100))
+
+# Plotting scatter plots for lecture
+plot(head(raw$response,100), head(raw$predictor2,100), xlab="drownings", ylab = "air con units sold",
+     cex = 2, cex.axis = 2, cex.lab=2, col = "red")
+plot(head(raw$predictor1,100), head(raw$predictor2,100), xlab="drownings", ylab = "ice creams sold",
+     cex = 2, cex.axis = 2, cex.lab=2, col = "blue")
+plot(head(raw$predictor1,100), head(raw$predictor2,100), xlab="", ylab = "", xaxt='n', yaxt = 'n',
+     cex = 2, cex.axis = 2, cex.lab=2, col = "blue")
+plot(head(raw$response,100), head(raw$predictor1,100), xlab="", ylab = "", xaxt='n', yaxt = 'n',
+     cex = 2, cex.axis = 2, cex.lab=2, col = "red")
+plot(head(raw$response,100), head(raw$predictor2,100), xlab="", ylab = "", xaxt='n', yaxt = 'n',
+     cex = 2, cex.axis = 2, cex.lab=2, col = "orange")
+
+# Mann-Whitney test
+group1 <- c(1,2,4,6,3)
+group2 <- c(7,5,6,4,12)
+hist(group2, col = "orange", main="Group 2")
+wilcox.test(group1,group2)

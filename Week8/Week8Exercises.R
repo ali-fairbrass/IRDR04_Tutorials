@@ -12,13 +12,12 @@
 
 # Exercise 2
 # Load a new dataset mussel.csv
-# data are derived from Peake and Quinn (1993) and analyse in Quinn and Keough 2002 and Logan 2010
 # The study investigated abundance-area effects for invertebrates living in mussel beds in intertidal areas
 # 25 mussel beds
 # respone = number of invertebrates (INDIV)
 # Explanatory = the area of each clump (AREA)
 # additional possible response - Species richness of invertebrates (SPECIES)
-# Logan models abundance but we're going to look at species richness
+# We're going to look at species richness
 
 # a) Plot the data and assess whether a linear regression is appropriate.
 

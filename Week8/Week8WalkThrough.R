@@ -40,8 +40,8 @@ plot(Fruit ~ Root, data = Growth,
 # ?points specifically on the points.
 
 plot(Fruit ~ Root, data = Growth,
-     xlab = list("Root Biomass",cex = 1), # reset size to default of 1
-     ylab = list("Fruit Production",cex = 1), # reset size to default of 1
+     xlab = list("Root Biomass",cex = 1), #reset size to default of 1
+     ylab = list("Fruit Production",cex = 1), #reset size to default of 1
      cex = 2, pch = 21) # the pch argument controls the type 21 = filled circle, bg = colour.
 
 # You can see that there are two clusters of points here relating to the treatment - so let's explore that.
@@ -67,7 +67,9 @@ Flour <- read.csv(file.choose())
 # Look at it
 str(Flour)
 
-# Draw some pictures to assess linearity and normalisty of the data
+# Load the car package which contains the scatterplot function
+library(car)
+# Draw some pictures to assess linearity and normality of the data
 scatterplot(WEIGHTLOSS ~ HUMIDITY, data = Flour,
      xlab = "% Humidity",
      ylab = "Beetle weight loss (mg)",

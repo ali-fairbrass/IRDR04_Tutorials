@@ -8,17 +8,20 @@
 # # #  Exercises and Solutions # # #
 
 # Exercise 1
-# Create a high quality plot using the datafile: Nelson.csv  
+# Create a high quality plot using the datafile: Nelson.csv
+
+# Solution
+# Students can plot the data in which ever way they like, but I want to see them using the funcitonality of R to make
+# the plot visually appealing.
 
 # Exercise 2
 # Load a new dataset mussel.csv
-# data are derived from Peake and Quinn (1993) and analyse in Quinn and Keough 2002 and Logan 2010
 # The study investigated abundance-area effects for invertebrates living in mussel beds in intertidal areas
 # 25 mussel beds
 # respone = number of invertebrates (INDIV)
 # Explanatory = the area of each clump (AREA)
 # additional possible response - Species richness of invertebrates (SPECIES)
-# Logan models abundance but we're going to look at species richness
+# We're going to look at species richness
 
 # a) Plot the data and assess whether a linear regression is appropriate.
 
@@ -40,6 +43,10 @@ scatterplot(SPECIES ~ AREA, data = Mussel)
 mussel.lm <- lm(SPECIES ~ AREA, data = Mussel)
 
 summary(mussel.lm)
+
+# The results suggest that there is a significant positive correlation between the variables.
+# The adjusted R-square suggested that there is some unexplained variation in the model.
+# We should try adding more variables to the model to acount for this variation.
 
 # c) Apply a log transformation to the AREA variable (as it is not normally distributed)
 # and re-run the model.

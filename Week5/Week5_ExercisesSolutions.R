@@ -12,7 +12,7 @@
 # significantly after they experienced the 2011 Japanese earthquake and tsunami
 
 # There are 130 children in your study. Before the event they had a mean test score of 100 with a 
-# standard deviation of 10. After the event their mean score was 85 with a standard deviation of 20.
+# standard deviation of 10. After the event their mean score was 85 with a standard deviation of 11.
 
 # A) Create a dataframe of your data.
 
@@ -25,7 +25,7 @@ df1 <- data.frame(score, group)
 
 # Group 2: After event
 set.seed(10)
-score <- rnorm(n=130, mean=85, sd=20)
+score <- rnorm(n=130, mean=85, sd=11)
 group <- 1:length(score)
 group <- rep("Group 2",length(group))
 df2 <- data.frame(score, group)
@@ -39,9 +39,23 @@ df <- rbind(df1, df2)
 hist(df$score[df$group=="Group 1"], main = "Group 1", xlab = "Score")
 hist(df$score[df$group=="Group 2"], main = "Group 2", xlab = "Score")
 
+# Use shapiro test for normality
+shapiro.test(df$score[df$group=="Group 1"])
+shapiro.test(df$score[df$group=="Group 2"])
+
+#Ho: x is normal distributed | accept if p_values>0.05
+#Ha: x is not normal distributed | accept if p_values<=0.05
+
 # Check homogeneity of the groups variance
 library(car)
 leveneTest(score ~ group, data = df)
+
+# or alternatively use F Test to Compare Two Variances
+var.test(df$score[df$group=="Group 1"], df$score[df$group=="Group 2"], ratio = 1,
+         alternative ="two.sided")
+
+#Ho: Sigma x = Sigma y  | accept if p_values>0.05
+#Ha: Sigma x != Sigma y  | accept if p_values<=0.05
 
 # Justification. A parametric test is suitable as the data is normally distributed and the variances
 # of the two groups are equal. A paired t-test should be used a the data of the groups are not independant.

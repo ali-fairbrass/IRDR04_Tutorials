@@ -12,7 +12,7 @@
 # significantly after they experienced the 2011 Japanese earthquake and tsunami
 
 # There are 130 children in your study. Before the event they had a mean test score of 100 with a 
-# standard deviation of 10. After the event their mean score was 85 with a standard deviation of 20.
+# standard deviation of 10. After the event their mean score was 85 with a standard deviation of 11.
 
 # A) Create a dataframe of your data.
 

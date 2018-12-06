@@ -9,12 +9,13 @@
 
 # Exercise 1
 # You want to investigate whether the academic performance of a group of school children changed
-# significantly after they experienced the 2011 Japanese earthquake and tsunami
+# significantly after they experienced the 2011 Japanese earthquake and tsunami.
 
 # There are 130 children in your study. Before the event they had a mean test score of 100 with a 
 # standard deviation of 10. After the event their mean score was 85 with a standard deviation of 11.
 
-# A) Create a dataframe of your data.
+# A) Create a dataframe of your data by randomly selecting test scores for your 130 children from the 
+# appropriate normal distributions.
 
 # Group 1: Before event
 set.seed(10)
@@ -58,18 +59,21 @@ var.test(df$score[df$group=="Group 1"], df$score[df$group=="Group 2"], ratio = 1
 #Ha: Sigma x != Sigma y  | accept if p_values<=0.05
 
 # Justification. A parametric test is suitable as the data is normally distributed and the variances
-# of the two groups are equal. A paired t-test should be used a the data of the groups are not independant.
+# of the two groups are equal. The sample size is large.
+# A paired t-test should be used a the data of the groups are not independant.
 
-# C) Use an appropriate statistical test to draw a conclusion about the students test scores
+# C) Use an appropriate statistical test to draw a conclusion about the childrens test scores
 # before and after the event. Report the results of your test appropriately.
 
 t.test(df$score[df$group=="Group 1"], df$score[df$group=="Group 2"], paired=T)
 # Calculate standard deviation of the two groups
+mean(df$score[df$group=="Group 1"])
 sd(df$score[df$group=="Group 1"])
+mean(df$score[df$group=="Group 2"])
 sd(df$score[df$group=="Group 2"])
 
 # Report: There was a significant difference in the academic scores of students before (M=100, SD=9.26)
-# and after (M=83, SD=18.52), t=19.73, p=<0.001, the event.
+# and after (M=84, SD=10.19), t=185.9, p=<0.001, the event.
 
 
 # Exercise 2

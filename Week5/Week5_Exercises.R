@@ -14,7 +14,8 @@
 # There are 130 children in your study. Before the event they had a mean test score of 100 with a 
 # standard deviation of 10. After the event their mean score was 85 with a standard deviation of 11.
 
-# A) Create a dataframe of your data.
+# A) Create a dataframe of your data by randomly selecting test scores for your 130 children from the 
+# appropriate normal distributions.
 
 # B) Check the assumptions of parametric testing and justify your choice of a statistical test.
 
@@ -29,7 +30,7 @@
 # Men aged 20 happiness scores: 4,5,3,4,5,5,2,4,3,3,4,5,2,1,4
 # Men aged 35 happiness scores: 3,4,5,5,1,1,3,2,2,4,2,5,3,3,2
 
-# A) Create a dataframe for this data
+# A) Create a dataframe for this data.
 
 # B) Justify why a parametric test would not be approporaite for your investigation.
 

@@ -38,3 +38,4 @@ hist(sampleBoot$t, col="orange", main="bootstrap distribution \nreps = 10,000", 
 # Multiple hypothesis testing
 p = c(0.04, 0.01, 0.001, 0.06, 0.4)
 p.adjust(p, method = p.adjust.methods, n = length(p))
+

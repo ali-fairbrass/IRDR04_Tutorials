@@ -2,11 +2,17 @@
 
 # The following data:
 
-df <- c(12, 15, 18, 9, 20, 17, 13, 14)
+df <- c(10, 9, 31, 10, 20, 3, 10, 11)
 
 mean(df)
 sd(df)
 median(df)
+
+df <- c(7, 14, 18, 25, 29, 24, 33, 37, 43)
+hist(df)
+
+pnorm(36, mean = 36, sd = 5)
+pnorm(40, mean = 36, sd = 5) - pnorm(30, mean = 36, sd = 5) 
 
 set.seed(10)
 round(rnorm(5, 60, 20))

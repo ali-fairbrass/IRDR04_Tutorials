@@ -45,3 +45,15 @@ dev.off()
 0.30*240
 
 (100/65)*58
+
+pnorm(60, mean=50, sd=15) - pnorm(30, mean=50, sd=15)
+prob<-1-(pnorm(30,mean=50,sd=15,lower.tail=T)+pnorm(60,mean=50,sd=15,lower.tail = F))
+prob
+
+pnorm(40, mean = 36, sd = 5) - pnorm(30, mean = 36, sd = 5)
+1-(pnorm(30, mean = 36, sd = 5,lower.tail = T) + pnorm(40, mean = 36, sd = 5, lower.tail = F))
+
+x = c(1,3,6,3,2,5,6,7,5,4)
+y = c(4,7,5,2,1,4,5,6,7,8)
+z <- data.frame(x,y)
+lm.out <- lm(z$x~z$y)

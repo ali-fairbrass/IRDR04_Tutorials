@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1545304895867.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2759475845",
+    "id" : "87950938",
+    "lastKnownWriteTime" : 1545324829,
+    "last_content_update" : 1545324829081,
+    "path" : "~/GitHub/IRDR04_Tutorials/exam/examPrep.R",
+    "project_path" : "exam/examPrep.R",
+    "properties" : {
+        "cursorPosition" : "48,0",
+        "scrollLine" : "19"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
